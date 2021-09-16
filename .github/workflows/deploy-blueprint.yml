@@ -19,15 +19,15 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-- name: Assign Azure Blueprint
-  uses: neilpeterson/action-assign-blueprint@master
-  env:
-    AZURETENANTID: ${{ secrets.AZURETENANTID }}
-    AZUREPASSWORD: ${{ secrets.AZUREPASSWORD }}
-    AZURECLIENTID: ${{ secrets.AZURECLIENTID }}
-  with:
-    AssignmentName: actionBlueprintPublish
+    steps:
+    - name: Assign Azure Blueprint
+    - uses: neilpeterson/action-assign-blueprint@master
+    env:
+      AZURETENANTID: ${{ secrets.AZURETENANTID }}
+      AZUREPASSWORD: ${{ secrets.AZUREPASSWORD }}
+      AZURECLIENTID: ${{ secrets.AZURECLIENTID }}
+      with:
+      AssignmentName: actionBlueprintPublish
     azureManagementGroupName: nepeters-internal
     blueprintName: actionBlueprintPublish
     azureSubscriptionID: 00000000-0000-0000-0000-000000000000
