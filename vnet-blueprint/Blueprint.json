@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "displayName": "Basic Networking (VNET)",
+    "description": "Configures a virtual network with a subnet and an NSG.",
+    "targetScope": "subscription",
+    "parameters": {},
+    "resourceGroups": {
+      "SingleRG": {
+        "name": "test-rg",
+        "location": "eastus",
+        "metadata": {
+          "displayName": "VNET Resource Group"
+        },
+        "dependsOn": [],
+        "tags": {
+          "usergroup": "Nashville"
+        }
+      }
+    }
+  }
+}
