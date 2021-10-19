@@ -20,14 +20,12 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-    - name: Assign Azure Blueprint
-    - uses: neilpeterson/action-assign-blueprint@master
-    env:
-      AZURETENANTID: ${{ secrets.AZURETENANTID }}
-      AZUREPASSWORD: ${{ secrets.AZUREPASSWORD }}
-      AZURECLIENTID: ${{ secrets.AZURECLIENTID }}
-      with:
-      AssignmentName: actionBlueprintPublish
-    blueprintName: vnet-blueprint
-    azureSubscriptionID: 2fbf906e-1101-4bc0-b64f-adc44e462fff
-    AssignmentFilePath: /vnet-blueprint/Blueprint.json
+- task: nepeters.azure-blueprints.AssignBlueprint.AssignBlueprint@1
+  displayName: 'Assign Azure Blueprint'
+  inputs:
+    azureSubscription: 'Microsoft Azure Sponsorship'
+    AssignmentName: 'vnet-blueprint'
+    BlueprintName: 'vnet-blueprint'
+    SubscriptionID: ''
+    Wait: true
+    StopOnFailure: true
