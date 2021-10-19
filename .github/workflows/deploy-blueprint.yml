@@ -28,7 +28,6 @@ jobs:
       AZURECLIENTID: ${{ secrets.AZURECLIENTID }}
       with:
       AssignmentName: actionBlueprintPublish
-    azureManagementGroupName: nepeters-internal
-    blueprintName: actionBlueprintPublish
-    azureSubscriptionID: 00000000-0000-0000-0000-000000000000
-    AssignmentFilePath: ./assign/assign-blueprint.json
+    blueprintName: vnet-blueprint
+    azureSubscriptionID: 2fbf906e-1101-4bc0-b64f-adc44e462fff
+    AssignmentFilePath: /vnet-blueprint/Blueprint.json
